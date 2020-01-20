@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../identicon.dart';
-import '../localization.dart';
-import '../styles.dart';
+import '../../localization.dart';
+import '../../styles.dart';
+import '../../widgets/widgets.dart';
 
 class TermsOfUsePage extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class TermsOfUsePage extends StatelessWidget {
         title: Text(localizations.termsOfUseTitle),
       ),
       body: Container(
-        padding: EdgeInsets.all(Styles.containerPadding),
+        padding: Styles.containerPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,7 +44,7 @@ class TermsOfUsePage extends StatelessWidget {
                     Navigator.pushNamed(context, '/secret_backup');
                   },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Styles.buttonPadding),
+                    padding: Styles.buttonPadding,
                     child: Text(localizations.termsOfUseAcceptButton),
                  ),
                ),

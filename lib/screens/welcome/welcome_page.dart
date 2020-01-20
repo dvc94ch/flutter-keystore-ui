@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../localization.dart';
-import '../styles.dart';
+import '../../localization.dart';
+import '../../styles.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
         title: Text(localizations.welcomeTitle),
       ),
       body: Container(
-        padding: EdgeInsets.all(Styles.containerPadding),
+        padding: Styles.containerPadding,
         child: Column(
           children: [
             Container(
@@ -43,7 +43,7 @@ class WelcomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/create_password');
               },
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: Styles.buttonPadding),
+                padding: Styles.buttonPadding,
                 child: Text(localizations.welcomeContinueButton),
               ),
             ),

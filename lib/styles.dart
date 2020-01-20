@@ -14,6 +14,7 @@ class Styles {
     fontSize: 24,
   );
 
-  static double containerPadding = 16.0;
-  static double buttonPadding = 16.0;
+  static EdgeInsets containerPadding = EdgeInsets.all(16.0);
+
+  static EdgeInsets buttonPadding = EdgeInsets.symmetric(horizontal: 16.0);
 }

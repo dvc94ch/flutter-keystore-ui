@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../localization.dart';
-import '../styles.dart';
+import '../../localization.dart';
+import '../../styles.dart';
 
 class CreatePasswordPage extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class CreatePasswordPage extends StatelessWidget {
         title: Text(localizations.createPasswordTitle),
       ),
       body: Container(
-        padding: EdgeInsets.all(Styles.containerPadding),
+        padding: Styles.containerPadding,
         child: Form(
           child: Column(
             children: [
@@ -38,7 +38,7 @@ class CreatePasswordPage extends StatelessWidget {
                   FlatButton(
                     onPressed: () {},
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: Styles.buttonPadding),
+                      padding: Styles.buttonPadding,
                       child: Text(localizations.createPasswordImportButton),
                     ),
                   ),
@@ -47,7 +47,7 @@ class CreatePasswordPage extends StatelessWidget {
                       Navigator.pushNamed(context, '/account_image');
                     },
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: Styles.buttonPadding),
+                      padding: Styles.buttonPadding,
                       child: Text(localizations.createPasswordCreateButton),
                     ),
                   ),

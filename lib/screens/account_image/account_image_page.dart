@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../identicon.dart';
-import '../localization.dart';
-import '../styles.dart';
+import '../../localization.dart';
+import '../../styles.dart';
+import '../../widgets/widgets.dart';
 
 class AccountImagePage extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class AccountImagePage extends StatelessWidget {
         title: Text(localizations.accountImageTitle),
       ),
       body: Container(
-        padding: EdgeInsets.all(Styles.containerPadding),
+        padding: Styles.containerPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,7 +40,7 @@ class AccountImagePage extends StatelessWidget {
                     Navigator.pushNamed(context, '/terms_of_use');
                   },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Styles.buttonPadding),
+                    padding: Styles.buttonPadding,
                     child: Text(localizations.accountImageNextButton),
                   ),
                 ),

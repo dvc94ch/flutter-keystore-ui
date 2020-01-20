@@ -2,10 +2,7 @@ import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 import 'package:flutter/material.dart';
 import 'localization.dart';
-import 'account_image/account_image.dart';
-import 'create_password/create_password.dart';
-import 'terms_of_use/terms_of_use.dart';
-import 'welcome/welcome.dart';
+import 'screens/screens.dart';
 
 void main() {
   // Override is necessary to prevent Unknown platform' flutter startup error.
