@@ -55,6 +55,8 @@ class AppLocalizations {
   String get secretConfirmMessage => 'Please select each word in order to ensure it\'s correct.';
   String get secretConfirmSecretLabel => 'Secret phrase';
   String get secretConfirmConfirmButton => 'Confirm';
+
+  String get accountDetailsTitle => 'Account Details';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
