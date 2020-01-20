@@ -24,14 +24,8 @@ class SecretConfirmPage extends StatelessWidget {
             ),
             SizedBox.fromSize(size: Size(1, 30)),
             Card(
-              child: Padding(
-                padding: Styles.containerPadding,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(localizations.secretConfirmMessage),
-                  ],
-                ),
+              child: ListTile(
+                title: Text(localizations.secretConfirmMessage),
               ),
             ),
             SizedBox.fromSize(size: Size(1, 20)),
@@ -50,19 +44,14 @@ class SecretConfirmPage extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ButtonBar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 RaisedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/account_details');
                   },
-                  child: Padding(
-                    padding: Styles.buttonPadding,
-                    child: Text(localizations.secretConfirmConfirmButton),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
+                  child: Text(localizations.secretConfirmConfirmButton),
                 ),
               ],
             ),

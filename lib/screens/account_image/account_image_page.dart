@@ -47,19 +47,14 @@ class AccountImagePage extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ButtonBar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 RaisedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/terms_of_use');
                   },
-                  child: Padding(
-                    padding: Styles.buttonPadding,
-                    child: Text(localizations.accountImageNextButton),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
+                  child: Text(localizations.accountImageNextButton),
                 ),
               ],
             ),

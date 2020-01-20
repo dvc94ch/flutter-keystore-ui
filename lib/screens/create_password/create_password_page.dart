@@ -49,30 +49,21 @@ class CreatePasswordPage extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ButtonBar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FlatButton(
-                  onPressed: () {},
-                  child: Padding(
-                    padding: Styles.buttonPadding,
-                    child: Text(localizations.createPasswordImportButton),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
-                  textColor: Colors.black,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/restore_account');
+                  },
+                  child: Text(localizations.createPasswordImportButton),
                 ),
+                SizedBox.fromSize(size: Size(8, 1)),
                 RaisedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/account_image');
                   },
-                  child: Padding(
-                    padding: Styles.buttonPadding,
-                    child: Text(localizations.createPasswordCreateButton),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
+                  child: Text(localizations.createPasswordCreateButton),
                 ),
               ],
             ),

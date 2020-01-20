@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart'
 import 'package:flutter/material.dart';
 import 'localization.dart';
 import 'screens/screens.dart';
+import 'styles.dart';
 
 void main() {
   // Override is necessary to prevent Unknown platform' flutter startup error.
@@ -15,9 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppLocalizations().appTitle,
-      theme: ThemeData(
-        primaryColor: Colors.black,
-      ),
+      theme: Styles.theme,
       localizationsDelegates: [
         AppLocalizationsDelegate(),
       ],

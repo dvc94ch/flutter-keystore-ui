@@ -44,19 +44,14 @@ class TermsOfUsePage extends StatelessWidget {
                 }
               },
             ),
-            ButtonBar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 RaisedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/secret_backup');
                   },
-                  child: Padding(
-                    padding: Styles.buttonPadding,
-                    child: Text(localizations.termsOfUseAcceptButton),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
+                  child: Text(localizations.termsOfUseAcceptButton),
                 ),
               ],
             ),

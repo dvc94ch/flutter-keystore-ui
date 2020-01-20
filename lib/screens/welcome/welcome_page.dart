@@ -42,13 +42,7 @@ class WelcomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/create_password');
               },
-              child: Padding(
-                padding: Styles.buttonPadding,
-                child: Text(localizations.welcomeContinueButton),
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
-              ),
+              child: Text(localizations.welcomeContinueButton),
             ),
           ],
         ),
