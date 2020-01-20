@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'localization.dart';
 import 'account_image/account_image.dart';
 import 'create_password/create_password.dart';
+import 'terms_of_use/terms_of_use.dart';
 import 'welcome/welcome.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class App extends StatelessWidget {
         '/welcome': (context) => WelcomePage(),
         '/create_password': (context) => CreatePasswordPage(),
         '/account_image': (context) => AccountImagePage(),
+        '/terms_of_use': (context) => TermsOfUsePage(),
       },
     );
   }

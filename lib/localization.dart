@@ -30,6 +30,9 @@ class AppLocalizations {
   String get accountImageMessage2 =>
     'You\'ll see this image every time you need to confirm a transaction.';
   String get accountImageNextButton => 'Next';
+
+  String get termsOfUseTitle => 'Terms of use';
+  String get termsOfUseAcceptButton => 'Accept';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
