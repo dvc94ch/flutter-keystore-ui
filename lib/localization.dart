@@ -10,6 +10,7 @@ class AppLocalizations {
   }
 
   String get appTitle => 'Flutter Keystore';
+  String get secretPhraseWidgetLabel => 'Secret phrase';
 
   String get welcomeTitle => 'Welcome to Sunshine';
   String get welcomeMessage =>
@@ -53,7 +54,6 @@ class AppLocalizations {
 
   String get secretConfirmTitle => 'Confirm Secret Phrase';
   String get secretConfirmMessage => 'Please select each word in order to ensure it\'s correct.';
-  String get secretConfirmSecretLabel => 'Secret phrase';
   String get secretConfirmConfirmButton => 'Confirm';
 
   String get accountDetailsTitle => 'Account Details';

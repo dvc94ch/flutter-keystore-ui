@@ -32,15 +32,7 @@ class SecretConfirmPage extends StatelessWidget {
             Card(
               child: Padding(
                 padding: Styles.containerPadding,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.vpn_key),
-                    labelText: localizations.secretConfirmSecretLabel,
-                  ),
-                  keyboardType: TextInputType.multiline,
-                  minLines: 5,
-                  maxLines: 5,
-                ),
+                child: SecretPhraseFormField(),
               ),
             ),
             Spacer(),
