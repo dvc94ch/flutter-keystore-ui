@@ -17,6 +17,12 @@ class AppLocalizations {
     'It allows you to hold dots & tokens, and serves as ' +
     'your bridge to decentralized applications.';
   String get welcomeContinueButton => 'Continue';
+
+  String get createPasswordTitle => 'Create Password';
+  String get createPasswordNewPasswordLabel => 'New password (min 8 chars)';
+  String get createPasswordConfirmPasswordLabel => 'Confirm password';
+  String get createPasswordCreateButton => 'Create';
+  String get createPasswordImportButton => 'Import with seed phrase';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

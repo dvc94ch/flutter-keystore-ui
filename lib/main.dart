@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 import 'package:flutter/material.dart';
 import 'localization.dart';
+import 'create_password/create_password.dart';
 import 'welcome/welcome.dart';
 
 void main() {
@@ -18,7 +19,11 @@ class App extends StatelessWidget {
       localizationsDelegates: [
         AppLocalizationsDelegate(),
       ],
-      home: WelcomePage(),
+      initialRoute: '/welcome',
+      routes: {
+        '/welcome': (context) => WelcomePage(),
+        '/create_password': (context) => CreatePasswordPage(),
+      },
     );
   }
 }
