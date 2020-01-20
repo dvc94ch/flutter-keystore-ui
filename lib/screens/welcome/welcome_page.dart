@@ -46,6 +46,9 @@ class WelcomePage extends StatelessWidget {
                 padding: Styles.buttonPadding,
                 child: Text(localizations.welcomeContinueButton),
               ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              ),
             ),
           ],
         ),

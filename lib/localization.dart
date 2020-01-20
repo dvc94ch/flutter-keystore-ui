@@ -23,10 +23,11 @@ class AppLocalizations {
   String get createPasswordConfirmPasswordLabel => 'Confirm password';
   String get createPasswordCreateButton => 'Create';
   String get createPasswordImportButton => 'Import with seed phrase';
+  String get createPasswordLengthError => 'Password needs to be at least eight chars';
 
   String get accountImageTitle => 'Your unique account image';
   String get accountImageMessage1 =>
-    'This image, was programmatically generated for you with your account number.';
+    'This image, was programmatically generated for you using your account number.';
   String get accountImageMessage2 =>
     'You\'ll see this image every time you need to confirm a transaction.';
   String get accountImageNextButton => 'Next';
@@ -38,7 +39,7 @@ class AppLocalizations {
   String get secretBackupDescription =>
     'Your secret backup phrase makes it easy to back up and restore your account.';
   String get secretBackupDisclaimer =>
-    'WARNING: Never disclose your backup phrase. Anyone with this phrase can take ' +
+    'Never disclose your backup phrase. Anyone with this phrase can take ' +
     'your dots forever.';
   String get secretBackupTips =>
     'Tips:\n\n' +
@@ -48,6 +49,7 @@ class AppLocalizations {
     'each in two to three different locations.\n\n' +
     'Memorize this phrase.';
   String get secretBackupNextButton => 'Next';
+  String get secretBackupRemindButton => 'Remind me later';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

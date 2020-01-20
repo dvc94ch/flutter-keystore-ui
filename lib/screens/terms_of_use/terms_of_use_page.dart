@@ -17,18 +17,25 @@ class TermsOfUsePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Identicon(),
+            SizedBox.fromSize(size: Size(1, 30)),
             Text(
               localizations.termsOfUseTitle,
               style: Styles.title,
             ),
+            SizedBox.fromSize(size: Size(1, 8)),
             FutureBuilder(
               future: DefaultAssetBundle.of(context).loadString('assets/terms_of_use.txt'),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return Expanded(
-                    child: Scrollbar(
-                      child: SingleChildScrollView(
-                        child: Text(snapshot.data),
+                    child: Card(
+                      child: Scrollbar(
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: Styles.containerPadding,
+                            child: Text(snapshot.data),
+                          ),
+                        ),
                       ),
                     ),
                   );
@@ -46,9 +53,12 @@ class TermsOfUsePage extends StatelessWidget {
                   child: Padding(
                     padding: Styles.buttonPadding,
                     child: Text(localizations.termsOfUseAcceptButton),
-                 ),
-               ),
-             ],
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

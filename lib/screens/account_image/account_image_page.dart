@@ -17,20 +17,34 @@ class AccountImagePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Identicon(),
-            Spacer(),
+            SizedBox.fromSize(size: Size(1, 30)),
             Text(
               localizations.accountImageTitle,
               style: Styles.title,
             ),
-            Spacer(),
-            Text(
-              localizations.accountImageMessage1,
-              style: Styles.message,
+            SizedBox.fromSize(size: Size(1, 30)),
+            Card(
+              child: Padding(
+                padding: Styles.containerPadding,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(localizations.accountImageMessage1),
+                  ],
+                ),
+              ),
             ),
-            Spacer(),
-            Text(
-              localizations.accountImageMessage2,
-              style: Styles.message,
+            SizedBox.fromSize(size: Size(1, 20)),
+            Card(
+              child: Padding(
+                padding: Styles.containerPadding,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(localizations.accountImageMessage2),
+                  ],
+                ),
+              ),
             ),
             Spacer(),
             ButtonBar(
@@ -42,6 +56,9 @@ class AccountImagePage extends StatelessWidget {
                   child: Padding(
                     padding: Styles.buttonPadding,
                     child: Text(localizations.accountImageNextButton),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
                   ),
                 ),
               ],

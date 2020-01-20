@@ -15,6 +15,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppLocalizations().appTitle,
+      theme: ThemeData(
+        primaryColor: Colors.black,
+      ),
       localizationsDelegates: [
         AppLocalizationsDelegate(),
       ],

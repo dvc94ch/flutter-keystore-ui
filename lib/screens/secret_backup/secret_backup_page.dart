@@ -17,21 +17,53 @@ class SecretBackupPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Identicon(),
-            Spacer(),
+            SizedBox.fromSize(size: Size(1, 30)),
             Text(
               localizations.secretBackupTitle,
               style: Styles.title,
             ),
-            Spacer(),
-            Text(localizations.secretBackupDescription),
-            Spacer(),
-            Text(localizations.secretBackupDisclaimer),
-            Spacer(),
-            // secret
-            Text(localizations.secretBackupTips),
+            SizedBox.fromSize(size: Size(1, 8)),
+            Card(
+              child: ListTile(
+                title: Text(localizations.secretBackupDescription),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.warning),
+                title: Text(localizations.secretBackupDisclaimer),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.vpn_key),
+                title: Text(
+                  'achieve sight vacant city system frame kid reject island peasant ' +
+                  'plastic order turkey genre deputy grocery horn habit stock roast ' +
+                  'rotate monkey guard coin',
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.info),
+                title: Text(localizations.secretBackupTips),
+              ),
+            ),
             Spacer(),
             ButtonBar(
               children: [
+                FlatButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: Styles.buttonPadding,
+                    child: Text(localizations.secretBackupRemindButton),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                  textColor: Colors.black,
+                ),
                 RaisedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/secret_confirm');
@@ -39,6 +71,9 @@ class SecretBackupPage extends StatelessWidget {
                   child: Padding(
                     padding: Styles.buttonPadding,
                     child: Text(localizations.secretBackupNextButton),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
                   ),
                 ),
               ],
