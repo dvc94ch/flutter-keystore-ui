@@ -23,6 +23,13 @@ class AppLocalizations {
   String get createPasswordConfirmPasswordLabel => 'Confirm password';
   String get createPasswordCreateButton => 'Create';
   String get createPasswordImportButton => 'Import with seed phrase';
+
+  String get accountImageTitle => 'Your unique account image';
+  String get accountImageMessage1 =>
+    'This image, was programmatically generated for you with your account number.';
+  String get accountImageMessage2 =>
+    'You\'ll see this image every time you need to confirm a transaction.';
+  String get accountImageNextButton => 'Next';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

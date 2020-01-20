@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 import 'package:flutter/material.dart';
 import 'localization.dart';
+import 'account_image/account_image.dart';
 import 'create_password/create_password.dart';
 import 'welcome/welcome.dart';
 
@@ -23,6 +24,7 @@ class App extends StatelessWidget {
       routes: {
         '/welcome': (context) => WelcomePage(),
         '/create_password': (context) => CreatePasswordPage(),
+        '/account_image': (context) => AccountImagePage(),
       },
     );
   }
