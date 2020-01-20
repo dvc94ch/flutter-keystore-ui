@@ -33,6 +33,21 @@ class AppLocalizations {
 
   String get termsOfUseTitle => 'Terms of use';
   String get termsOfUseAcceptButton => 'Accept';
+
+  String get secretBackupTitle => 'Secret Backup Phrase';
+  String get secretBackupDescription =>
+    'Your secret backup phrase makes it easy to back up and restore your account.';
+  String get secretBackupDisclaimer =>
+    'WARNING: Never disclose your backup phrase. Anyone with this phrase can take ' +
+    'your dots forever.';
+  String get secretBackupTips =>
+    'Tips:\n\n' +
+    'Store this phrase in a password manager like 1password.\n\n' +
+    'Write this phrase on a piece of paper and store it in a secure location. If you ' +
+    'want even more security, write it down on multiple pieces of paper and store ' +
+    'each in two to three different locations.\n\n' +
+    'Memorize this phrase.';
+  String get secretBackupNextButton => 'Next';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
