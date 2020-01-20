@@ -28,6 +28,7 @@ class App extends StatelessWidget {
         '/account_image': (context) => AccountImagePage(),
         '/terms_of_use': (context) => TermsOfUsePage(),
         '/secret_backup': (context) => SecretBackupPage(),
+        '/secret_confirm': (context) => SecretConfirmPage(),
       },
     );
   }

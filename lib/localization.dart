@@ -50,6 +50,11 @@ class AppLocalizations {
     'Memorize this phrase.';
   String get secretBackupNextButton => 'Next';
   String get secretBackupRemindButton => 'Remind me later';
+
+  String get secretConfirmTitle => 'Confirm Secret Phrase';
+  String get secretConfirmMessage => 'Please select each word in order to ensure it\'s correct.';
+  String get secretConfirmSecretLabel => 'Secret phrase';
+  String get secretConfirmConfirmButton => 'Confirm';
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
