@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../localization.dart';
 import '../../styles.dart';
+import '../../widgets/widgets.dart';
 
 class CreatePasswordPage extends StatelessWidget {
   @override
@@ -23,29 +24,7 @@ class CreatePasswordPage extends StatelessWidget {
             Card(
               child: Padding(
                 padding: Styles.containerPadding,
-                child: Form(
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.lock),
-                          labelText: localizations.createPasswordNewPasswordLabel,
-                        ),
-                        validator: (String value) {
-                          return value.length < 8 ? localizations.createPasswordLengthError : null;
-                        },
-                      ),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.lock),
-                          labelText: localizations.createPasswordConfirmPasswordLabel,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: CreatePasswordForm(),
               ),
             ),
             Spacer(),

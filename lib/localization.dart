@@ -11,6 +11,9 @@ class AppLocalizations {
 
   String get appTitle => 'Flutter Keystore';
   String get secretPhraseWidgetLabel => 'Secret phrase';
+  String get createPasswordWidgetNewPasswordLabel =>'New password (min 8 chars)';
+  String get createPasswordWidgetConfirmPasswordLabel => 'Confirm password';
+  String get createPasswordWidgetLengthError => 'Password needs to be at least eight chars';
 
   String get welcomeTitle => 'Welcome to Sunshine';
   String get welcomeMessage =>
@@ -20,11 +23,8 @@ class AppLocalizations {
   String get welcomeContinueButton => 'Continue';
 
   String get createPasswordTitle => 'Create Password';
-  String get createPasswordNewPasswordLabel => 'New password (min 8 chars)';
-  String get createPasswordConfirmPasswordLabel => 'Confirm password';
   String get createPasswordCreateButton => 'Create';
   String get createPasswordImportButton => 'Import with seed phrase';
-  String get createPasswordLengthError => 'Password needs to be at least eight chars';
 
   String get accountImageTitle => 'Your unique account image';
   String get accountImageMessage1 =>
