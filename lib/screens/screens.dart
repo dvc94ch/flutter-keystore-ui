@@ -1,6 +1,7 @@
 export 'account_details/account_details.dart';
-export 'create_password/create_password.dart';
 export 'account_image/account_image.dart';
+export 'create_password/create_password.dart';
+export 'login/login.dart';
 export 'restore_account/restore_account.dart';
 export 'secret_backup/secret_backup.dart';
 export 'secret_confirm/secret_confirm.dart';

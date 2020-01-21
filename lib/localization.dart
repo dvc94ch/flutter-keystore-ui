@@ -62,6 +62,11 @@ class AppLocalizations {
     'Enter your secret twelve word phrase here to restore your vault.';
   String get restoreAccountRestoreButton => 'Restore';
 
+  String get loginTitle => 'Welcome Back!';
+  String get loginMessage => 'The decentralized web awaits';
+  String get loginPasswordLabel => 'Password';
+  String get loginButton => 'Log in';
+
   String get accountDetailsTitle => 'Account Details';
 }
 
