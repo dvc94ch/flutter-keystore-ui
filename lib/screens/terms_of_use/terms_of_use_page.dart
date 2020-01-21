@@ -23,27 +23,7 @@ class TermsOfUsePage extends StatelessWidget {
               style: Styles.title,
             ),
             SizedBox.fromSize(size: Size(1, 8)),
-            FutureBuilder(
-              future: DefaultAssetBundle.of(context).loadString('assets/terms_of_use.txt'),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Expanded(
-                    child: Card(
-                      child: Scrollbar(
-                        child: SingleChildScrollView(
-                          child: Padding(
-                            padding: Styles.containerPadding,
-                            child: Text(snapshot.data),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                } else {
-                  return CircularProgressIndicator();
-                }
-              },
-            ),
+            ScrollableTextAsset('assets/terms_of_use.txt'),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
