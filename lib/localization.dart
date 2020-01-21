@@ -56,6 +56,11 @@ class AppLocalizations {
   String get secretConfirmMessage => 'Please select each word in order to ensure it\'s correct.';
   String get secretConfirmConfirmButton => 'Confirm';
 
+  String get restoreAccountTitle => 'Restore your Account with Seed Phrase';
+  String get restoreAccountMessage =>
+    'Enter your secret twelve word phrase here to restore your vault.';
+  String get restoreAccountRestoreButton => 'Restore';
+
   String get accountDetailsTitle => 'Account Details';
 }
 
