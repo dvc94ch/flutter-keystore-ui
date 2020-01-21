@@ -15,6 +15,7 @@ class AppLocalizations {
   String get createPasswordWidgetNewPasswordLabel =>'New password (min 8 chars)';
   String get createPasswordWidgetConfirmPasswordLabel => 'Confirm password';
   String get createPasswordWidgetLengthError => 'Password needs to be at least eight chars';
+  String get createPasswordWidgetMissmatchError => 'Passwords don\'t match';
 
   String get welcomeTitle => 'Welcome to Sunshine';
   String get welcomeMessage =>
