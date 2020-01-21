@@ -1,4 +1,4 @@
-name: flutter_app_template
+name: flutter_keystore_ui
 description: A new Flutter project.
 version: 1.0.0+1
 environment:
@@ -6,6 +6,7 @@ environment:
 
 dependencies:
   bloc: ^3.0.0
+  fluid_layout: ^0.1.0
   flutter:
     sdk: flutter
   flutter_bloc: ^3.1.0
