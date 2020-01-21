@@ -10,6 +10,7 @@ class AppLocalizations {
   }
 
   String get appTitle => 'Flutter Keystore';
+  String get logoutButtonTooltip => 'Log out';
   String get secretPhraseWidgetLabel => 'Secret phrase';
   String get createPasswordWidgetNewPasswordLabel =>'New password (min 8 chars)';
   String get createPasswordWidgetConfirmPasswordLabel => 'Confirm password';

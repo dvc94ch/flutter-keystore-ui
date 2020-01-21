@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../localization.dart';
 import '../../styles.dart';
+import '../../widgets/widgets.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -14,35 +14,32 @@ class WelcomePage extends StatelessWidget {
       body: Container(
         padding: Styles.containerPadding,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              padding: EdgeInsets.all(36.0),
-              child: SizedBox.fromSize(
-                child: SvgPicture.asset('assets/logo.svg'),
-                size: Size(300.0, 300.0),
-              ),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(width: 5.0, color: Colors.black),
-              ),
-            ),
-            Spacer(),
+            Logo(),
+            SizedBox.fromSize(size: Size(1, 30)),
             Text(
               localizations.welcomeTitle,
               style: Styles.title,
+              textAlign: TextAlign.center,
             ),
-            Spacer(),
+            SizedBox.fromSize(size: Size(1, 20)),
             Text(
               localizations.welcomeMessage,
               style: Styles.message,
               textAlign: TextAlign.center,
             ),
             Spacer(),
-            RaisedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/create_password');
-              },
-              child: Text(localizations.welcomeContinueButton),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/create_password');
+                  },
+                  child: Text(localizations.welcomeContinueButton),
+                ),
+              ],
             ),
           ],
         ),

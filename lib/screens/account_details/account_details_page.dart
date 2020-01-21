@@ -10,6 +10,15 @@ class AccountDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(localizations.accountDetailsTitle),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            tooltip: localizations.logoutButtonTooltip,
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
+          ),
+        ],
       ),
       body: Container(
         padding: Styles.containerPadding,
