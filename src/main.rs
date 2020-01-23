@@ -1,3 +1,4 @@
+use flutter_keystore_plugin::KeystorePlugin;
 use flutter_winit::FlutterWindow;
 use glutin::window::WindowBuilder;
 use std::path::Path;
@@ -24,6 +25,8 @@ fn main() {
     let window = WindowBuilder::new().with_title("Flutter App Demo");
     let flutter = FlutterWindow::new(window).unwrap();
     let flutter = flutter.with_resource_context().unwrap();
+
+    flutter.add_plugin(KeystorePlugin::default());
 
     flutter.start_engine(Path::new(&assets_dir), &args).unwrap();
 

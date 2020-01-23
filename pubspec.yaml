@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^3.1.0
+  flutter_keystore_plugin:
+    path: ../flutter-keystore-plugin
   flutter_svg: ^0.16.0
 
 dev_dependencies:
