@@ -5,5 +5,6 @@ export 'login/login.dart';
 export 'restore_account/restore_account.dart';
 export 'secret_backup/secret_backup.dart';
 export 'secret_confirm/secret_confirm.dart';
+export 'splash/splash.dart';
 export 'terms_of_use/terms_of_use.dart';
 export 'welcome/welcome.dart';

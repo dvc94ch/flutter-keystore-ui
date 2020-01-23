@@ -20,8 +20,9 @@ class App extends StatelessWidget {
       localizationsDelegates: [
         AppLocalizationsDelegate(),
       ],
-      initialRoute: '/welcome',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => SplashPage(),
         '/welcome': (context) => WelcomePage(),
         '/create_password': (context) => CreatePasswordPage(),
         '/account_image': (context) => AccountImagePage(),
