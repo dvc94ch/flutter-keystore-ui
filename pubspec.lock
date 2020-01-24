@@ -126,9 +126,11 @@ packages:
   flutter_keystore_plugin:
     dependency: "direct main"
     description:
-      path: "../flutter-keystore-plugin"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "2da4c71f71d724140bd1066cb8070126c0c39a77"
+      url: "https://github.com/dvc94ch/flutter-keystore-plugin"
+    source: git
     version: "1.0.0+1"
   flutter_staggered_grid_view:
     dependency: transitive

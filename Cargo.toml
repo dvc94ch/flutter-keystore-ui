@@ -6,9 +6,9 @@ edition = "2018"
 
 [dependencies]
 env_logger = "0.7.1"
-flutter-engine = { path = "../flutter-rs/flutter-engine" } #git = "https://github.com/flutter-rs/flutter-rs" }
-flutter-keystore-plugin = { path = "../flutter-keystore-plugin" }
-flutter-winit = { path = "../flutter-rs/flutter-winit" } #git = "https://github.com/flutter-rs/flutter-rs" }
+flutter-engine = { git = "https://github.com/dvc94ch/flutter-rs", branch = "texture-registry" }
+flutter-keystore-plugin = { git = "https://github.com/dvc94ch/flutter-keystore-plugin" }
+flutter-winit = { git = "https://github.com/dvc94ch/flutter-rs", branch = "texture-registry" }
 glutin = { git = "https://github.com/dvc94ch/glutin", branch = "android" }
 log = "0.4.8"
 

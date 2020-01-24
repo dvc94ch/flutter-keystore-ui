@@ -684,9 +684,9 @@ dependencies = [
  "android_glue 0.2.3 (git+https://github.com/rust-windowing/android-rs-glue)",
  "android_logger 0.8.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "env_logger 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "flutter-engine 0.4.0",
- "flutter-keystore-plugin 0.1.0",
- "flutter-winit 0.4.0",
+ "flutter-engine 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
+ "flutter-keystore-plugin 0.1.0 (git+https://github.com/dvc94ch/flutter-keystore-plugin)",
+ "flutter-winit 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
  "glutin 0.22.0-alpha5 (git+https://github.com/dvc94ch/glutin?branch=android)",
  "jni-android-sys 0.0.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "jni-glue 0.0.10 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -696,8 +696,9 @@ dependencies = [
 [[package]]
 name = "flutter-engine"
 version = "0.4.0"
+source = "git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry#6ac80577519d8b01d8a2e844fe6833627b72c057"
 dependencies = [
- "flutter-engine-sys 0.4.0",
+ "flutter-engine-sys 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
  "gl 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "image 0.22.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -710,6 +711,7 @@ dependencies = [
 [[package]]
 name = "flutter-engine-sys"
 version = "0.4.0"
+source = "git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry#6ac80577519d8b01d8a2e844fe6833627b72c057"
 dependencies = [
  "bindgen 0.52.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "dirs 2.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -718,14 +720,15 @@ dependencies = [
 [[package]]
 name = "flutter-keystore-plugin"
 version = "0.1.0"
+source = "git+https://github.com/dvc94ch/flutter-keystore-plugin#2da4c71f71d724140bd1066cb8070126c0c39a77"
 dependencies = [
  "blockies 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "dirs 2.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "env_logger 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "flutter-engine 0.4.0",
- "flutter-plugins 0.4.0",
- "flutter-winit 0.4.0",
+ "flutter-engine 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
+ "flutter-plugins 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
+ "flutter-winit 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
  "glutin 0.22.0-alpha5 (git+https://github.com/dvc94ch/glutin?branch=android)",
  "image 0.22.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -742,8 +745,9 @@ dependencies = [
 [[package]]
 name = "flutter-plugins"
 version = "0.4.0"
+source = "git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry#6ac80577519d8b01d8a2e844fe6833627b72c057"
 dependencies = [
- "flutter-engine 0.4.0",
+ "flutter-engine 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
  "locale_config 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -756,12 +760,13 @@ dependencies = [
 [[package]]
 name = "flutter-winit"
 version = "0.4.0"
+source = "git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry#6ac80577519d8b01d8a2e844fe6833627b72c057"
 dependencies = [
  "async-std 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "copypasta 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "flutter-engine 0.4.0",
- "flutter-engine-sys 0.4.0",
- "flutter-plugins 0.4.0",
+ "flutter-engine 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
+ "flutter-engine-sys 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
+ "flutter-plugins 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)",
  "futures-task 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "gl 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "glutin 0.22.0-alpha5 (git+https://github.com/dvc94ch/glutin?branch=android)",
@@ -2791,6 +2796,11 @@ dependencies = [
 "checksum failure_derive 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0bc225b78e0391e4b8683440bf2e63c2deeeb2ce5189eab46e2b68c6d3725d08"
 "checksum fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 "checksum fixed-hash 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "3367952ceb191f4ab95dd5685dc163ac539e36202f9fcfd0cb22f9f9c542fefc"
+"checksum flutter-engine 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)" = "<none>"
+"checksum flutter-engine-sys 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)" = "<none>"
+"checksum flutter-keystore-plugin 0.1.0 (git+https://github.com/dvc94ch/flutter-keystore-plugin)" = "<none>"
+"checksum flutter-plugins 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)" = "<none>"
+"checksum flutter-winit 0.4.0 (git+https://github.com/dvc94ch/flutter-rs?branch=texture-registry)" = "<none>"
 "checksum foreign-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1"
 "checksum foreign-types-shared 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
 "checksum fuchsia-cprng 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
