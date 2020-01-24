@@ -1,6 +1,11 @@
 import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_keystore_plugin/flutter_keystore_plugin.dart';
+import 'package:meta/meta.dart';
+import 'blocs/blocs.dart';
+import 'keys.dart';
 import 'localization.dart';
 import 'screens/screens.dart';
 import 'styles.dart';
@@ -14,25 +19,71 @@ void main() {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: AppLocalizations().appTitle,
-      theme: Styles.theme,
-      localizationsDelegates: [
-        AppLocalizationsDelegate(),
-      ],
-      initialRoute: '/splash',
-      routes: {
-        '/splash': (context) => SplashPage(),
-        '/welcome': (context) => WelcomePage(),
-        '/create_password': (context) => CreatePasswordPage(),
-        '/account_image': (context) => AccountImagePage(),
-        '/terms_of_use': (context) => TermsOfUsePage(),
-        '/secret_backup': (context) => SecretBackupPage(),
-        '/secret_confirm': (context) => SecretConfirmPage(),
-        '/restore_account': (context) => RestoreAccountPage(),
-        '/login': (context) => LoginPage(),
-        '/account_details': (context) => AccountDetailsPage(),
-      },
+    return BlocSetup(
+      child: MaterialApp(
+        title: AppLocalizations().appTitle,
+        theme: Styles.theme,
+        localizationsDelegates: [
+          AppLocalizationsDelegate(),
+        ],
+        navigatorKey: Keys.navigatorKey,
+        onGenerateRoute: (routeSettings) {
+          print(routeSettings);
+          switch (routeSettings.name) {
+            case '/splash':
+              return MaterialPageRoute(builder: (context) => SplashPage());
+            case '/welcome':
+              return MaterialPageRoute(builder: (context) => WelcomePage());
+            case '/create_password':
+              return MaterialPageRoute(builder: (context) => CreatePasswordPage());
+            case '/account_image':
+              return MaterialPageRoute(builder: (context) => AccountImagePage());
+            case '/terms_of_use':
+              return MaterialPageRoute(builder: (context) => TermsOfUsePage());
+            case '/secret_backup':
+              return MaterialPageRoute(builder: (context) => SecretBackupPage());
+            case '/secret_confirm':
+              return MaterialPageRoute(builder: (context) => SecretConfirmPage());
+            case '/restore_account':
+              return MaterialPageRoute(builder: (context) => RestoreAccountPage());
+            case '/login':
+              return MaterialPageRoute(builder: (context) => LoginPage());
+            case '/account_details':
+              return MaterialPageRoute(builder: (context) => AccountDetailsPage());
+            default:
+              return MaterialPageRoute(builder: (context) => SplashPage());
+          }
+        },
+      ),
+    );
+  }
+}
+
+class BlocSetup extends StatelessWidget {
+  final Widget child;
+
+  BlocSetup({@required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<NavigatorBloc>(
+      create: (context) => NavigatorBloc(navigatorKey: Keys.navigatorKey),
+      child: RepositoryProvider<FlutterKeystorePlugin>(
+        create: (context) => FlutterKeystorePlugin(),
+        child: Builder(
+          builder: (context) {
+            final keystore = RepositoryProvider.of<FlutterKeystorePlugin>(context);
+            final navigator = BlocProvider.of<NavigatorBloc>(context);
+            return BlocProvider<AccountBloc>(
+              create: (context) => AccountBloc(
+                keystore: keystore,
+                navigator: navigator,
+              )..add(Start()),
+              child: child,
+            );
+          },
+        ),
+      ),
     );
   }
 }

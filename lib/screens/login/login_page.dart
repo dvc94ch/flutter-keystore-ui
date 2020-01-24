@@ -30,29 +30,11 @@ class LoginPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox.fromSize(size: Size(1, 20)),
-            Card(
-              child: Padding(
-                padding: Styles.containerPadding,
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.lock),
-                    labelText: localizations.loginPasswordLabel,
-                  ),
-                ),
-              ),
-            ),
-            Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/account_details');
-                  },
-                  child: Text(localizations.loginButton),
-                ),
-              ],
+            LoginForm(
+              padding: Styles.containerPadding,
+              passwordLabel: localizations.loginFormPasswordLabel,
+              validationError: localizations.loginFormValidationError,
+              loginButton: localizations.loginFormLoginButton,
             ),
           ],
         ),

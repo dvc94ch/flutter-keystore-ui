@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_keystore_plugin/flutter_keystore_plugin.dart';
+import '../../blocs/blocs.dart';
 import '../../localization.dart';
 
 class SplashPage extends StatelessWidget {
@@ -10,7 +13,9 @@ class SplashPage extends StatelessWidget {
         title: Text(localizations.appTitle),
       ),
       body: Center(
-        child: CircularProgressIndicator(),
+        child: BlocBuilder<AccountBloc, AccountState>(
+          builder: (context, state) => CircularProgressIndicator(),
+        ),
       ),
     );
   }

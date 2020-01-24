@@ -32,7 +32,9 @@ class SecretConfirmPage extends StatelessWidget {
             Card(
               child: Padding(
                 padding: Styles.containerPadding,
-                child: SecretPhraseFormField(),
+                child: SecretFormField(
+                  labelText: localizations.secretFormFieldLabel,
+                ),
               ),
             ),
             Spacer(),

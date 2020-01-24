@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../blocs/blocs.dart';
 import '../../localization.dart';
 import '../../styles.dart';
 import '../../widgets/widgets.dart';
@@ -15,7 +17,7 @@ class AccountDetailsPage extends StatelessWidget {
             icon: Icon(Icons.exit_to_app),
             tooltip: localizations.logoutButtonTooltip,
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              BlocProvider.of<AccountBloc>(context).add(Lock());
             },
           ),
         ],
@@ -35,11 +37,8 @@ class AccountDetailsPage extends StatelessWidget {
             SizedBox.fromSize(size: Size(1, 30)),
             QrCode(),
             SizedBox.fromSize(size: Size(1, 30)),
-            Card(
-              child: Padding(
-                padding: Styles.containerPadding,
-                child: Text('0x4e6cf0ed2d8bbf1fbbc9f2a100602ceba4bf1319'),
-              ),
+            PublicKey(
+              padding: Styles.containerPadding,
             ),
           ],
         ),

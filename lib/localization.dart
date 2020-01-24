@@ -10,12 +10,19 @@ class AppLocalizations {
   }
 
   String get appTitle => 'Flutter Keystore';
+
+  String get loginFormPasswordLabel => 'Password';
+  String get loginFormValidationError => 'Wrong password';
+  String get loginFormLoginButton => 'Log in';
+
   String get logoutButtonTooltip => 'Log out';
-  String get secretPhraseWidgetLabel => 'Secret phrase';
-  String get createPasswordWidgetNewPasswordLabel =>'New password (min 8 chars)';
-  String get createPasswordWidgetConfirmPasswordLabel => 'Confirm password';
-  String get createPasswordWidgetLengthError => 'Password needs to be at least eight chars';
-  String get createPasswordWidgetMissmatchError => 'Passwords don\'t match';
+
+  String get secretFormFieldLabel => 'Secret phrase';
+
+  String get createPasswordFormNewPasswordLabel =>'New password (min 8 chars)';
+  String get createPasswordFormConfirmPasswordLabel => 'Confirm password';
+  String get createPasswordFormLengthError => 'Password needs to be at least eight chars';
+  String get createPasswordFormMissmatchError => 'Passwords don\'t match';
 
   String get welcomeTitle => 'Welcome to Sunshine';
   String get welcomeMessage =>
@@ -65,8 +72,6 @@ class AppLocalizations {
 
   String get loginTitle => 'Welcome Back!';
   String get loginMessage => 'The decentralized web awaits';
-  String get loginPasswordLabel => 'Password';
-  String get loginButton => 'Log in';
 
   String get accountDetailsTitle => 'Account Details';
 }

@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
-import '../localization.dart';
 
 class CreatePasswordForm extends StatefulWidget {
+  final String newPasswordLabel;
+  final String passwordLengthError;
+  final String confirmPasswordLabel;
+  final String passwordMissmatchError;
+
+  CreatePasswordForm({
+    @required this.newPasswordLabel,
+    @required this.passwordLengthError,
+    @required this.confirmPasswordLabel,
+    @required this.passwordMissmatchError,
+  });
+
   @override
-  State<CreatePasswordForm> createState() => _CreatePasswordFromState();
+  State createState() => _CreatePasswordFormState();
 }
 
-class _CreatePasswordFromState extends State<CreatePasswordForm> {
-  final _formKey = GlobalKey<_CreatePasswordFromState>();
+class _CreatePasswordFormState extends State<CreatePasswordForm> {
+  final GlobalKey<_CreatePasswordFormState> _key = GlobalKey<_CreatePasswordFormState>();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context);
     return Form(
-      key: _formKey,
+      key: _key,
       autovalidate: true,
       child: Column(
         children: [
@@ -23,12 +33,12 @@ class _CreatePasswordFromState extends State<CreatePasswordForm> {
             obscureText: true,
             decoration: InputDecoration(
               icon: Icon(Icons.lock),
-              labelText: localizations.createPasswordWidgetNewPasswordLabel,
+              labelText: widget.newPasswordLabel,
             ),
             controller: _passwordController,
             validator: (String value) {
               if (value.length < 8) {
-                return localizations.createPasswordWidgetLengthError;
+                return widget.passwordLengthError;
               }
               return null;
             },
@@ -37,12 +47,12 @@ class _CreatePasswordFromState extends State<CreatePasswordForm> {
             obscureText: true,
             decoration: InputDecoration(
               icon: Icon(Icons.lock),
-              labelText: localizations.createPasswordWidgetConfirmPasswordLabel,
+              labelText: widget.confirmPasswordLabel,
             ),
             controller: _confirmPasswordController,
             validator: (String value) {
               if (!value.isEmpty && value != _passwordController.text) {
-                return localizations.createPasswordWidgetMissmatchError;
+                return widget.passwordMissmatchError;
               }
               return null;
             }
