@@ -19,10 +19,7 @@ class SecretFormField extends StatelessWidget {
         labelText: labelText,
         errorText: errorText,
       ),
-      keyboardType: TextInputType.multiline,
       controller: controller,
-      minLines: 5,
-      maxLines: 5,
     );
   }
 }

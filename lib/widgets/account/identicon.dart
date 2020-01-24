@@ -10,11 +10,12 @@ class Identicon extends StatelessWidget {
         child: SizedBox(
           child: BlocBuilder<AccountBloc, AccountState>(
             builder: (context, state) {
-              if (state is Unlocked) {
-                return Texture(textureId: state.keyInfo.blocky);
-              } else {
-                throw 'Invalid to show a blocky';
-              }
+              final account = state is Unlocked
+                ? state.account
+                : state is PaperBackup
+                ? state.account
+                : null;
+              return Texture(textureId: account.identicon);
             }
           ),
           width: 100,

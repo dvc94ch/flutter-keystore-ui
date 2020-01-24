@@ -38,7 +38,7 @@ class RestoreAccountPage extends StatelessWidget {
             Card(
               child: Padding(
                 padding: Styles.containerPadding,
-                child: CreatePasswordForm(),
+                child: NewPasswordFormField(),
               ),
             ),
             Spacer(),

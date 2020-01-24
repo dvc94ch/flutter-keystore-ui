@@ -11,18 +11,23 @@ class AppLocalizations {
 
   String get appTitle => 'Flutter Keystore';
 
-  String get loginFormPasswordLabel => 'Password';
-  String get loginFormValidationError => 'Wrong password';
-  String get loginFormLoginButton => 'Log in';
+  String get unlockFormPasswordLabel => 'Password';
+  String get unlockFormValidationError => 'Wrong password';
+  String get unlockFormUnlockButton => 'Unlock account';
 
-  String get logoutButtonTooltip => 'Log out';
-
+  String get lockButtonTooltip => 'Lock account';
   String get secretFormFieldLabel => 'Secret phrase';
 
-  String get createPasswordFormNewPasswordLabel =>'New password (min 8 chars)';
-  String get createPasswordFormConfirmPasswordLabel => 'Confirm password';
-  String get createPasswordFormLengthError => 'Password needs to be at least eight chars';
-  String get createPasswordFormMissmatchError => 'Passwords don\'t match';
+  String get newPasswordFormFieldNewPasswordLabel =>'New password (min 8 chars)';
+  String get newPasswordFormFieldConfirmPasswordLabel => 'Confirm password';
+  String get newPasswordFormFieldLengthError => 'Password needs to be at least eight chars';
+  String get newPasswordFormFieldMissmatchError => 'Passwords don\'t match';
+
+  String get createAccountFormImportButton => 'Import with seed phrase';
+  String get createAccountFormCreateButton => 'Create account';
+
+  String get paperBackupFormSecretMissmatchError => 'Secret phrase doesn\'t match.';
+  String get paperBackupFormConfirmButton => 'Confirm';
 
   String get welcomeTitle => 'Welcome to Sunshine';
   String get welcomeMessage =>
@@ -32,8 +37,6 @@ class AppLocalizations {
   String get welcomeContinueButton => 'Continue';
 
   String get createPasswordTitle => 'Create Password';
-  String get createPasswordCreateButton => 'Create';
-  String get createPasswordImportButton => 'Import with seed phrase';
 
   String get accountImageTitle => 'Your unique account image';
   String get accountImageMessage1 =>
@@ -63,7 +66,6 @@ class AppLocalizations {
 
   String get secretConfirmTitle => 'Confirm Secret Phrase';
   String get secretConfirmMessage => 'Please select each word in order to ensure it\'s correct.';
-  String get secretConfirmConfirmButton => 'Confirm';
 
   String get restoreAccountTitle => 'Restore your Account with Seed Phrase';
   String get restoreAccountMessage =>

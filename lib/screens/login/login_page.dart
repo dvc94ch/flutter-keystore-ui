@@ -30,11 +30,11 @@ class LoginPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox.fromSize(size: Size(1, 20)),
-            LoginForm(
+            UnlockForm(
               padding: Styles.containerPadding,
-              passwordLabel: localizations.loginFormPasswordLabel,
-              validationError: localizations.loginFormValidationError,
-              loginButton: localizations.loginFormLoginButton,
+              passwordLabel: localizations.unlockFormPasswordLabel,
+              validationError: localizations.unlockFormValidationError,
+              unlockButton: localizations.unlockFormUnlockButton,
             ),
           ],
         ),

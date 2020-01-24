@@ -14,11 +14,12 @@ class PublicKey extends StatelessWidget {
         padding: padding,
         child: BlocBuilder<AccountBloc, AccountState>(
           builder: (context, state) {
-            if (state is Unlocked) {
-              return Text(state.keyInfo.ss58);
-            } else {
-              throw 'Invalid to show public key';
-            }
+            final account = state is Unlocked
+              ? state.account
+              : state is PaperBackup
+              ? state.account
+              : null;
+            return Text(account.ss58);
           },
         ),
       ),

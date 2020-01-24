@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/account/account.dart';
 
-class LoginForm extends StatefulWidget {
+class UnlockForm extends StatefulWidget {
   final EdgeInsets padding;
   final String passwordLabel;
   final String validationError;
-  final String loginButton;
+  final String unlockButton;
 
-  LoginForm({
+  UnlockForm({
     @required this.padding,
     @required this.passwordLabel,
     @required this.validationError,
-    @required this.loginButton,
+    @required this.unlockButton,
   });
 
   @override
-  State createState() => _LoginFormState();
+  State createState() => _UnlockFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
-  final GlobalKey<_LoginFormState> _key = GlobalKey<_LoginFormState>();
+class _UnlockFormState extends State<UnlockForm> {
+  final GlobalKey<_UnlockFormState> _key = GlobalKey<_UnlockFormState>();
   final _passwordController = TextEditingController();
 
   @override
@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                     BlocProvider.of<AccountBloc>(context)
                       .add(Unlock(password: _passwordController.text));
                  },
-                  child: Text(widget.loginButton),
+                  child: Text(widget.unlockButton),
                 ),
               ],
             ),

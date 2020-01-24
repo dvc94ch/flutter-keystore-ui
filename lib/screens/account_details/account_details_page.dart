@@ -14,8 +14,8 @@ class AccountDetailsPage extends StatelessWidget {
         title: Text(localizations.accountDetailsTitle),
         actions: [
           IconButton(
-            icon: Icon(Icons.exit_to_app),
-            tooltip: localizations.logoutButtonTooltip,
+            icon: Icon(Icons.lock),
+            tooltip: localizations.lockButtonTooltip,
             onPressed: () {
               BlocProvider.of<AccountBloc>(context).add(Lock());
             },
@@ -30,10 +30,7 @@ class AccountDetailsPage extends StatelessWidget {
           children: [
             Identicon(),
             SizedBox.fromSize(size: Size(1, 30)),
-            Text(
-              'Account 1',
-              style: Styles.title,
-            ),
+            AccountName(style: Styles.title),
             SizedBox.fromSize(size: Size(1, 30)),
             QrCode(),
             SizedBox.fromSize(size: Size(1, 30)),

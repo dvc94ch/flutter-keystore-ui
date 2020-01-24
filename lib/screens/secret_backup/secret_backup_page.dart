@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../blocs/blocs.dart';
 import '../../localization.dart';
 import '../../styles.dart';
 import '../../widgets/widgets.dart';
@@ -35,13 +37,16 @@ class SecretBackupPage extends StatelessWidget {
               ),
             ),
             Card(
-              child: ListTile(
-                leading: Icon(Icons.vpn_key),
-                title: Text(
-                  'achieve sight vacant city system frame kid reject island peasant ' +
-                  'plastic order turkey genre deputy grocery horn habit stock roast ' +
-                  'rotate monkey guard coin',
-                ),
+              child: BlocBuilder<AccountBloc, AccountState>(
+                builder: (context, state) {
+                  final phrase = state is PaperBackup
+                    ? state.phrase
+                    : null;
+                  return ListTile(
+                    leading: Icon(Icons.vpn_key),
+                    title: Text(phrase ?? ''),
+                  );
+                },
               ),
             ),
             Card(
@@ -56,7 +61,8 @@ class SecretBackupPage extends StatelessWidget {
               children: [
                 FlatButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/account_details');
+                    BlocProvider.of<AccountBloc>(context)
+                      .add(PostponeBackup());
                   },
                   child: Text(localizations.secretBackupRemindButton),
                 ),

@@ -24,3 +24,11 @@ class Unlock extends AccountEvent {
 }
 
 class Lock extends AccountEvent {}
+
+class SetPaperBackup extends AccountEvent {
+  final String phrase;
+
+  SetPaperBackup({@required this.phrase});
+}
+
+class PostponeBackup extends AccountEvent {}

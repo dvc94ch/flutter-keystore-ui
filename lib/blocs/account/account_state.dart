@@ -14,7 +14,19 @@ class Locked extends AccountState {
 }
 
 class Unlocked extends AccountState {
-  final KeyInfo keyInfo;
+  final Account account;
 
-  Unlocked({@required this.keyInfo});
+  Unlocked({@required this.account});
+}
+
+class PaperBackup extends AccountState {
+  final bool error;
+  final String phrase;
+  final Account account;
+
+  PaperBackup({
+    @required this.account,
+    @required this.phrase,
+    @required this.error,
+  });
 }
