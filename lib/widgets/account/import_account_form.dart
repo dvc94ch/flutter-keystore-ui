@@ -2,31 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/account/account.dart';
 import 'new_password_field.dart';
+import 'secret_form_field.dart';
 
-class CreateAccountForm extends StatefulWidget {
+class ImportAccountForm extends StatefulWidget {
   final EdgeInsets padding;
+  final String secretPhraseLabel;
   final String newPasswordLabel;
   final String passwordLengthError;
   final String confirmPasswordLabel;
   final String passwordMissmatchError;
   final String importButton;
-  final String createButton;
 
-  CreateAccountForm({
+  ImportAccountForm({
     @required this.padding,
+    @required this.secretPhraseLabel,
     @required this.newPasswordLabel,
     @required this.passwordLengthError,
     @required this.confirmPasswordLabel,
     @required this.passwordMissmatchError,
     @required this.importButton,
-    @required this.createButton,
   });
 
   @override
-  State createState() => _CreateAccountFormState();
+  State createState() => _ImportAccountFormState();
 }
 
-class _CreateAccountFormState extends State<CreateAccountForm> {
+class _ImportAccountFormState extends State<ImportAccountForm> {
+  final _secretController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
@@ -37,6 +39,24 @@ class _CreateAccountFormState extends State<CreateAccountForm> {
         autovalidate: true,
         child: Column(
           children: [
+            Card(
+              child: Padding(
+                padding: widget.padding,
+                child: BlocBuilder<AccountBloc, AccountState>(
+                  builder: (context, state) {
+                    print(state);
+                    final errorText = state is ImportFailed
+                      ? state.error
+                      : null;
+                    return SecretFormField(
+                      labelText: widget.secretPhraseLabel,
+                      errorText: errorText,
+                      controller: _secretController,
+                    );
+                  },
+                ),
+              ),
+            ),
             Card(
               child: Padding(
                 padding: widget.padding,
@@ -54,19 +74,14 @@ class _CreateAccountFormState extends State<CreateAccountForm> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                FlatButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/restore_account');
-                  },
-                  child: Text(widget.importButton),
-                ),
-                SizedBox.fromSize(size: Size(8, 1)),
                 RaisedButton(
                   onPressed: () {
+                    final phrase = _secretController.text;
+                    final password = _passwordController.text;
                     BlocProvider.of<AccountBloc>(context)
-                      .add(Generate(password: _passwordController.text));
+                      .add(Import(phrase: phrase, password: password));
                   },
-                  child: Text(widget.createButton),
+                  child: Text(widget.importButton),
                 ),
               ],
             ),

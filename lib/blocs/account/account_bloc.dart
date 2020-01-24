@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_keystore_plugin/flutter_keystore_plugin.dart';
 import 'package:meta/meta.dart';
 import '../blocs.dart';
@@ -46,10 +47,14 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       navigator.add(PushNamed('/account_image'));
     }
     if (event is Import) {
-      await keystore.import(event.phrase, event.password);
-      final account = await keystore.account();
-      yield Unlocked(account: account);
-      navigator.add(PushNamed('/account_details'));
+      try {
+        await keystore.import(event.phrase, event.password);
+        final account = await keystore.account();
+        yield Unlocked(account: account);
+        navigator.add(PushNamed('/account_details'));
+      } on PlatformException catch (error) {
+        yield ImportFailed(error: error.message);
+      }
     }
     if (event is Lock) {
       navigator.add(PushNamed('/login'));

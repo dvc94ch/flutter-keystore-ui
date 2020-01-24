@@ -27,31 +27,14 @@ class RestoreAccountPage extends StatelessWidget {
               ),
             ),
             SizedBox.fromSize(size: Size(1, 20)),
-            Card(
-              child: Padding(
-                padding: Styles.containerPadding,
-                child: SecretFormField(
-                  labelText: localizations.secretFormFieldLabel,
-                ),
-              ),
-            ),
-            Card(
-              child: Padding(
-                padding: Styles.containerPadding,
-                child: NewPasswordFormField(),
-              ),
-            ),
-            Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/account_details');
-                  },
-                  child: Text(localizations.restoreAccountRestoreButton),
-                ),
-              ],
+            ImportAccountForm(
+              padding: Styles.containerPadding,
+              secretPhraseLabel: localizations.secretFormFieldLabel,
+              newPasswordLabel: localizations.newPasswordFormFieldNewPasswordLabel,
+              passwordLengthError: localizations.newPasswordFormFieldLengthError,
+              confirmPasswordLabel: localizations.newPasswordFormFieldConfirmPasswordLabel,
+              passwordMissmatchError: localizations.newPasswordFormFieldMissmatchError,
+              importButton: localizations.restoreAccountRestoreButton,
             ),
           ],
         ),

@@ -30,3 +30,9 @@ class PaperBackup extends AccountState {
     @required this.error,
   });
 }
+
+class ImportFailed extends AccountState {
+  final String error;
+
+  ImportFailed({@required this.error});
+}
